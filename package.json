@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "geceye_birak",
   "version": "1.0.0",
   "description": "",
@@ -21,3 +22,22 @@
     "dotenv": "^16.0.3"
   }
 }
+=======
+  "name": "ReplitReactjsProject",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "vite": "^3.0.4",
+    "ethers": "^5.4.4",
+    "@vitejs/plugin-react": "^2.0.0"
+  }
+}
+>>>>>>> 815e0e547ebd3fa7a9a5c9914462e69235f6c78e
