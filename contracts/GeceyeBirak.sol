@@ -9,6 +9,12 @@ contract GeceyeBirak {
     uint256 private seed; // to randomize winner
 
     event NewMesaj(address indexed from, uint256 timestamp, string message);
+    
+    modifier wait23hours() {
+        require(lastMesajedAt[msg.sender] + 23 hours < block.timestamp, 
+            "Please wait 23 hours before submitting a new message");
+        _;
+    }
 
     struct Mesaj {
         address mesajer;
@@ -25,9 +31,7 @@ contract GeceyeBirak {
         seed = (block.timestamp + block.difficulty) % 100;
     }
 
-    function mesaj(string memory _message) public {
-        require(lastMesajedAt[msg.sender] + 23 hours < block.timestamp, 
-            "Please wait 23 hours before submitting a new message");
+    function mesaj(string memory _message) public wait23hours {
         lastMesajedAt[msg.sender] = block.timestamp;
 
         totalMesajs++;
